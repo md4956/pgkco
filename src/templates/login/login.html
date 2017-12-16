@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Log in page
+	</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+			<div class="distance col-lg-12 text-center">
+				<img src="{{ url_for('static', filename='pic/lorem.png') }}" class="img-responsive center-block text-center" height="500px" width="500px">
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+			<div class="center">
+				<form action="{{ url_for('login.logging_processing') }}" method="post" role="form"> <!--action, method-->
+					<div>
+						<div class="space col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<input type="email" class="form-control input-lg" id="inputcolor" name="email" value="{{email}}" placeholder="ایمیل" autofocus required> <!--value, required-->
+						</div>
+						<div class="space col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<input type="password" class="form-control input-lg" id="inputcolor" name="password" value="{{password}}" placeholder="رمز عبور" required> <!--value required-->
+						</div>
+						<div class="space1 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+							<button type="submit" class="btn btn-default btn-lg btn-block" value="log in">ورود</button> <!--type (submit, instead of button)-->
+						</div>
+						{% with messages = get_flashed_messages(category_filter=["login"]) %} <!--flash-messages-->
+						    {% if messages %}
+						        {% for message in messages %}
+									<h1>
+										{{ message }}
+									</h1>
+								{% endfor %}
+							{% endif %}
+						{% endwith %}
+					</div>
+				</form>
+			</div>
+		<div class="links">
+			<div class="link1 col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				<a href="{{ url_for('signup.signup') }}">ثبت نام</a> <!--target removed-->
+			</div>
+			<div class="link2 col-xs-12 col-sm-12 col-md-8 col-lg-8">
+				<a href="#" target="_blank">رمز عبور را فراموش کردم</a>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

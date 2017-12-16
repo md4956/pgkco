@@ -1,0 +1,200 @@
+@font-face {
+	font-family: Behdad-Regular;
+	src: url(../font/Behdad-Regular.woff);
+}
+
+body {
+	direction: rtl;
+	background-color: #6f1f8e;
+}
+
+.container {
+	font-family: Behdad-Regular !important;
+}
+
+.btn-default {
+	background-color: #16a085;
+	border: none;
+}
+
+.btn-default:hover {
+	background-color: #16a085;
+	border:none;
+	color: #fff;
+}
+
+.btn-default:visited {
+	background-color: #fff;
+	border: none;
+	color: #fff;
+}
+
+input.form-control {
+	border-color: #ffffff;
+	background-color: #6f1f8e;
+}
+
+input.form-control:hover {
+	border-color: #16a085;
+	background-color: #6f1f8e;
+}
+
+a:link {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:visited {
+	color: white;
+	background-color: #0F94E9;
+	text-decoration: none;
+}
+
+a:active {
+	color: white;
+	background-color: #0F94E9;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin-top: 20px;
+	width: 80%;
+}
+
+
+.distance {
+	margin-top: 50px;
+}
+
+@media(max-width: 767px)
+{
+
+	.distance {
+		border-bottom: 1px solid #b029e5;
+
+	}
+}
+
+@media(min-width: 768px)
+{
+
+	.distance {
+		border-right: 1px solid #b029e5;
+
+	}
+}
+
+@media(max-width: 767px)
+{
+	img {
+	width: 50%;
+}
+
+}
+
+.form-control {
+	width: 60%;
+	margin: auto;
+}
+
+.btn-default {
+	width: 60%;
+	margin:auto;
+	color:#fff;
+}
+
+@media (min-width: 768px)
+{
+	.center {
+		margin: auto;
+		padding: 120px 0px 0px 0px;
+	}
+}
+
+.links {
+	margin: auto;
+	width: 60%;
+	padding-top: 30px;
+}
+
+.link1 {
+	font-family: Behdad-Regular;
+	float:right;
+	padding: 10px 0px 10px 0px;
+	font-size: 15px;
+	text-align: center;
+
+}
+
+.link2 {
+	font-size: 15px;
+	font-family: Behdad-Regular;
+	float:right;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+}
+
+#inputcolor {
+	color: #fff;
+}
+
+@media(max-width: 991px)
+{
+
+	.link1	{
+		border-bottom: 1px solid #b029e5;
+
+	}
+}
+
+@media(min-width: 992px)
+{
+
+	.link1	{
+		border-left: 1px solid #b029e5;
+
+	}
+}
+
+.form-control::input-placeholder {
+	color: #fff;
+	font-family: Behdad-Regular;
+}
+
+.form-control::-webkit-input-placeholder {
+	color: #fff;
+	font-family: Behdad-Regular;
+}
+
+.form-control:-moz-placeholder {
+	color: #fff;
+	font-family: Behdad-Regular;
+}
+
+.form-control::-moz-placeholder {
+	color: #fff;
+	font-family: Behdad-Regular;
+}
+
+.form-control:-ms-input-placeholder {
+	color: #fff;
+	font-family: Behdad-Regular;
+}
+
+.space {
+	margin: auto;
+	padding-top: 30px;
+}
+
+.space1 {
+	margin: auto;
+	padding-top: 30px;
+	padding-bottom: 15px;
+}

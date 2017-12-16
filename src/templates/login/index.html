@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="UTF-8">
+    <title>tamrin</title>
+</head>
+<body>
+  <h1 style="text-align:center;">GCI <a href="https://codein.withgoogle.com/dashboard/task-instances/6211328603586560/?sp-page=1">TASK</a></h1>
+    <div class="box">
+        <h1>Log In</h1>
+        <form action="/login/processing" method="post">
+            <input type="text" name="username" id="username" placeholder="Username" value="{{username}}" required/>
+            <br>
+            <input type="password" name="password" id="password" placeholder="Password" value="{{password}}" required/>
+            <br>
+            <input type="submit" class="button" value="Log In"/>
+        </form>
+    </div>
+
+    {% with messages = get_flashed_messages(category_filter=["login"]) %}
+        {% if messages %}
+            {% for message in messages %}
+                <h1>
+                    {{ message }}
+                </h1>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <!--{%if error%}-->
+    <!--<div class="error" style="text-align: center;">-->
+      <!--<p style="text-align: center;"><h2>error : {{error}}</h2></p>-->
+    <!--</div>-->
+    <!--{%endif%}-->
+
+</body>
+</html>
