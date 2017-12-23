@@ -21,6 +21,7 @@ class User(UserMixin):
 
     def __init__(self, username):
         self.id = username
+        
     @staticmethod
     def validate_login(password_hash, password):
         return check_password_hash(password_hash, password)
