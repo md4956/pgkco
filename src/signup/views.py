@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, get_flashed_messages
+from flask import Blueprint, render_template, request, redirect, url_for, flash, get_flashed_messages, session
 from pymongo import MongoClient
 from src.security.models import security
 
@@ -22,23 +22,20 @@ def signup():
 def signing_processing():
     find = collection.find_one({'email': request.form['email']})
 
-    p1 = request.form['password']
-    p2 = request.form['repassword']
-    #print(p1, p2)
-
-    if p1 == p2:
-
+    p1 = request.form['password1']
+    p2 = request.form['password2']
     if find:
         flash('this email is already exists. please log in or use another email', 'signup')
         return redirect(url_for('signup.signup'))
     elif p1 != p2:
-        flash('both password fields must match', 'login')
+        flash('both password fields must match', 'signup')
         return redirect(url_for('signup.signup'))
     else:
-        hashed_password = security.set_password(request.form['password'])
+        hashed_password = security.set_password(request.form['password1'])
         user = {'email': request.form['email'], 'password': hashed_password}
         collection.insert_one(user).inserted_id
         flash('successful. now you can log in', 'login')
+        session['username'] = request.form['email']
         return redirect(url_for('login.login'))
 
 
