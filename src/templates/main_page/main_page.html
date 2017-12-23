@@ -6,5 +6,6 @@
 </head>
 <body>
 <h1>welcome to my page, {{ session['username'] }}</h1>
+<a href="{{ url_for('main_page.logout') }}"><input type="button" value="logout"></a>
 </body>
 </html>

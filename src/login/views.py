@@ -21,7 +21,7 @@ class User(UserMixin):
 
     def __init__(self, username):
         self.id = username
-        
+
     @staticmethod
     def validate_login(password_hash, password):
         return check_password_hash(password_hash, password)
@@ -52,8 +52,8 @@ def logging_processing():
             var_dump(finduser['_id'])
             user_obj = User(str(finduser['_id']))
             login_user(user_obj)
-            # session['username'] = request.form['email']
-            return redirect(url_for('login.logged_in'))
+            session['username'] = request.form['email']
+            return redirect(url_for('main_page.main'))
         else:
             flash('please check your password and try again', 'login')
         return redirect(url_for('login.login'))
@@ -62,24 +62,24 @@ def logging_processing():
         return redirect(url_for('login.login'))
 
 
-# redirect authenticated users to main page
-@login_blueprint.route('/logged_in')
-@login_required
-def logged_in():
-    if 'username' in session:
-        return 'you are logged in as ' + session['username']
-    return '<h1>welcome !</h1>'
+# # redirect authenticated users to main page
+# @login_blueprint.route('/logged_in')
+# @login_required
+# def logged_in():
+#     if 'username' in session:
+#         return 'you are logged in as ' + session['username']
+#     return '<h1>welcome !</h1>'
 
 
-# redirect authenticated users to main page
-@login_blueprint.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return 'logout done'
+# # logout
+# @login_blueprint.route('/logout')
+# @login_required
+# def logout():
+#     logout_user()
+#     return 'logout done'
 
 
-# redirect authenticated users to main page
+# test route
 @login_blueprint.route('/test')
 @login_required
 def test():

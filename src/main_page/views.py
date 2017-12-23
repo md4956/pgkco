@@ -11,6 +11,14 @@ main_page_blueprint = Blueprint('main_page', __name__, template_folder='template
 
 @main_page_blueprint.route('/', methods=['GET', 'POST'])
 @login_required
-def main_page():
+def main():
     return render_template('main_page/main_page.html')
 
+
+# logout
+@main_page_blueprint.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('logout successfully done', 'login')
+    return redirect(url_for('login.login'))
