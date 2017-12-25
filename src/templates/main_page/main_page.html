@@ -5,7 +5,15 @@
     <title>Main</title>
 </head>
 <body>
+
+{% if current_user.is_authenticated %}
 <h1>welcome to my page, {{ session['username'] }}</h1>
 <a href="{{ url_for('main_page.logout') }}"><input type="button" value="logout"></a>
+
+{% else %}
+<h2>you have to log in first</h2>
+<a href="{{ url_for('login.login') }}"><input type="button" value="login page"></a>
+
+{% endif %}
 </body>
 </html>

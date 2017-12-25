@@ -1,6 +1,6 @@
 @font-face {
-	font-family: Behdad-Regular;
-	src: url(../font/Behdad-Regular.woff);
+	font-family: 'Quicksand', sans-serif;
+	src: url(../font/Quicksand-Bold.ttf);
 }
 
 body {
@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-	font-family: Behdad-Regular !important;
+	font-family: 'Quicksand', sans-serif; !important;
 }
 
 .btn-default {
@@ -125,7 +125,7 @@ img {
 }
 
 .link1 {
-	font-family: Behdad-Regular;
+	font-family: 'Quicksand', sans-serif;
 	float:right;
 	padding: 10px 0px 10px 0px;
 	font-size: 15px;
@@ -135,7 +135,7 @@ img {
 
 .link2 {
 	font-size: 15px;
-	font-family: Behdad-Regular;
+	font-family: 'Quicksand', sans-serif;
 	float:right;
 	padding: 10px 0px 10px 0px;
 	text-align: center;
@@ -165,27 +165,27 @@ img {
 
 .form-control::input-placeholder {
 	color: #fff;
-	font-family: Behdad-Regular;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .form-control::-webkit-input-placeholder {
 	color: #fff;
-	font-family: Behdad-Regular;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .form-control:-moz-placeholder {
 	color: #fff;
-	font-family: Behdad-Regular;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .form-control::-moz-placeholder {
 	color: #fff;
-	font-family: Behdad-Regular;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .form-control:-ms-input-placeholder {
 	color: #fff;
-	font-family: Behdad-Regular;
+	font-family: 'Quicksand', sans-serif;
 }
 
 .space {

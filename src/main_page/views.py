@@ -10,7 +10,6 @@ main_page_blueprint = Blueprint('main_page', __name__, template_folder='template
 
 
 @main_page_blueprint.route('/', methods=['GET', 'POST'])
-@login_required
 def main():
     return render_template('main_page/main_page.html')
 
