@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user list</title>
+</head>
+<body>
+
+<ul>
+    {% for i in usr %}
+    <li><a href="?edit={{ i['email'] }}">edit {{ i['email'] }}</a> <a href="?edit={{ i['email'] }}">edit {{ i['email'] }}</a></li>
+    {% endfor %}
+</ul>
+oj
+</body>
+</html>

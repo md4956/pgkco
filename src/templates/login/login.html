@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>
 		Log in page
@@ -22,10 +22,10 @@
 				<form action="{{ url_for('login.logging_processing') }}" method="post" role="form"> <!--action, method-->
 					<div>
 						<div class="space col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<input type="email" class="form-control input-lg" id="inputcolor" name="email" value="{{email}}" placeholder="ایمیل" autofocus required> <!--value, required-->
+							<input type="email" class="form-control input-lg" id="inputcolor" name="email" value="{{email}}" placeholder="ایمیل" lang="fa-IR" autofocus required> <!--value, required-->
 						</div>
 						<div class="space col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<input type="password" class="form-control input-lg" id="inputcolor" name="password" value="{{password}}" placeholder="رمز عبور" required> <!--value required-->
+							<input type="password" class="form-control input-lg" id="inputcolor" name="password" value="{{password}}" placeholder="رمز عبور" lang="fa-IR" required> <!--value required-->
 						</div>
 						<div class="space1 col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<button type="submit" class="btn btn-default btn-lg btn-block" value="log in">ورود</button> <!--type (submit, instead of button)-->
@@ -44,10 +44,10 @@
 			</div>
 		<div class="links">
 			<div class="link1 col-xs-12 col-sm-12 col-md-4 col-lg-4">
-				<a href="{{ url_for('signup.signup') }}">ثبت نام</a> <!--target removed-->
+				<a href="{{ url_for('signup.signup') }}" lang="fa-IR">ثبت نام</a> <!--target removed-->
 			</div>
 			<div class="link2 col-xs-12 col-sm-12 col-md-8 col-lg-8">
-				<a href="#" target="_blank">رمز عبور را فراموش کردم</a>
+				<a href="#" target="_blank" lang="fa-IR">رمز عبور را فراموش کردم</a>
 			</div>
 		</div>
 		</div>
