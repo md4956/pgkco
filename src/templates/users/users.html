@@ -8,9 +8,11 @@
 
 <ul>
     {% for i in usr %}
-    <li><a href="?edit={{ i['email'] }}">edit {{ i['email'] }}</a> <a href="?edit={{ i['email'] }}">edit {{ i['email'] }}</a></li>
+    <li><a href="?show={{ i['email'] }}">{{ i['email'] }} user info</a> <a href="?edit={{ i['email'] }}"> / edit</a> <a href="?delete={{ i['email'] }}"> / delete</a></li>
     {% endfor %}
+    <br>
+    or <a href="?create=1">create new user</a>
 </ul>
-oj
+ok !
 </body>
 </html>

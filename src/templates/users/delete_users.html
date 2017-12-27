@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete user {{ z }}</title>
+</head>
+<body>
+
+are you sure about deleting this user ({{ z }}) ? <br>
+<a href="{{ url_for('users.delete_user') }}{{ z }}">YES</a>
+<form method="post" action="{{ url_for('users.delete_user') }}">
+    <input type="submit" value="yes !"> or <a href="{{ url_for('users.user_list') }}">no, i'll think more about this</a>
+</form>
+
+</body>
+</html>
