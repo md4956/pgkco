@@ -1,6 +1,7 @@
 from flask import Blueprint, request, render_template, redirect, url_for
 from src.login.views import collection
 from src.security.models import security
+from flask_user import roles_required
 
 
 users_blueprint = Blueprint('users', __name__, template_folder='templates')
@@ -83,6 +84,7 @@ def update_user():
 
 @users_blueprint.route('/users_delete/', methods=['get', 'post'])
 @users_blueprint.route('/users_delete/<email>', methods=['get', 'post'])
+@roles_required('admin')
 def delete_user(email):
     print('deleting user: ' + email)
     collection.remove({'email': email})

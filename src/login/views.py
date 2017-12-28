@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, get_flashed_messages, abort, Response, session
 from pymongo import MongoClient
 from src.security.models import security
-from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
+from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 from werkzeug.security import check_password_hash
 from var_dump import var_dump
+from src.models import collection
+from flask_user import roles_required, UserMixin
 
 
 # blueprint for this .py
@@ -11,10 +13,20 @@ login_blueprint = Blueprint('login', __name__, template_folder='templates')
 
 login_manager = LoginManager()
 
-# connect to mongodb
-client = MongoClient('mongodb://localhost:27017/')
-db = client.pgco
-collection = db.users
+
+# Define the Role data-model
+class Role:
+    __tablename__ = 'roles'
+    id = collection['_id']
+    email = collection['email']
+
+
+# Define the UserRoles association table
+class UserRoles:
+    __tablename__ = 'user_roles'
+    id = collection['_id']
+    user_id = collection['_id']
+    role_id = collection['role']
 
 
 class User(UserMixin):
@@ -29,12 +41,12 @@ class User(UserMixin):
 
 @login_manager.user_loader
 def load_user(username):
+    return User(username)
     # u = collection.find_one({"_id": username})
     # if not u:
     #     return None
     # return User(u['_id'])
     # return User(username)
-    return User(username)
 
 
 # login page
@@ -50,6 +62,7 @@ def logging_processing():
     if finduser:
         if security.check_password(finduser['password'], request.form['password']) is True:
             var_dump(finduser['_id'])
+            print(finduser['role'])
             user_obj = User(str(finduser['_id']))
             login_user(user_obj)
             session['username'] = request.form['email']
@@ -82,5 +95,6 @@ def logging_processing():
 # test route
 @login_blueprint.route('/test')
 @login_required
+@roles_required('admin')
 def test():
     return 'done'
